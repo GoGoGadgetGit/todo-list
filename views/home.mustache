@@ -1,0 +1,29 @@
+
+
+<form method = "post" action = "/">
+
+<input type = "text" name = "todo">
+<input type = "submit" value = "Submit">
+
+</form>
+
+<ul>
+  {{ #todos }}
+  <li>
+    {{text}}
+    <form method = "post" action = "/done/{{ id }}">
+      <input type = "submit" value = "Done">
+    </form>
+  </li>
+  {{ /todos }}
+</ul>
+
+<h3> Completed Tasks </h3>
+
+<ul>
+  {{ #doneTodos }}
+  <li>
+    {{text}}
+  </li>
+  {{ /doneTodos }}
+</ul>
